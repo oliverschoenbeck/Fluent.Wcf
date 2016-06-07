@@ -1,0 +1,10 @@
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleClient\bin\Debug\Fluent.Wcf.ExampleClient.exe.config
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleClient\bin\Debug\Fluent.Wcf.ExampleClient.exe
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleClient\bin\Debug\Fluent.Wcf.ExampleClient.pdb
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleClient\bin\Debug\Fluent.Wcf.dll
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleClient\bin\Debug\Fluent.Wcf.ExampleContext.dll
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleClient\bin\Debug\Fluent.Wcf.ExampleContext.pdb
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleClient\bin\Debug\Fluent.Wcf.pdb
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleClient\obj\Debug\Fluent.Wcf.ExampleClient.csprojResolveAssemblyReference.cache
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleClient\obj\Debug\Fluent.Wcf.ExampleClient.exe
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleClient\obj\Debug\Fluent.Wcf.ExampleClient.pdb

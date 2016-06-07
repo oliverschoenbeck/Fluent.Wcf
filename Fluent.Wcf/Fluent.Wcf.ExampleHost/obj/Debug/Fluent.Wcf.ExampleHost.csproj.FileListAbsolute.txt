@@ -1,0 +1,10 @@
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleHost\bin\Debug\Fluent.Wcf.ExampleHost.exe.config
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleHost\bin\Debug\Fluent.Wcf.ExampleHost.exe
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleHost\bin\Debug\Fluent.Wcf.ExampleHost.pdb
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleHost\bin\Debug\Fluent.Wcf.dll
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleHost\bin\Debug\Fluent.Wcf.ExampleContext.dll
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleHost\bin\Debug\Fluent.Wcf.ExampleContext.pdb
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleHost\bin\Debug\Fluent.Wcf.pdb
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleHost\obj\Debug\Fluent.Wcf.ExampleHost.csprojResolveAssemblyReference.cache
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleHost\obj\Debug\Fluent.Wcf.ExampleHost.exe
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleHost\obj\Debug\Fluent.Wcf.ExampleHost.pdb
