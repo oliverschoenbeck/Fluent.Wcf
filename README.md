@@ -1,2 +1,2 @@
 # Fluent.Wcf
-A fluent interface to selfhost wcf services.
+A fluent interface to WCF.
