@@ -16,7 +16,6 @@ namespace Fluent.Wcf.ExampleHost
                 .CreateService(typeof (ExampleService), true)
                 .UsingInterface(typeof (IExampleService))
                 .UsingNetTcp().At("net.tcp://0:8090/ExampleService")
-                .UsingBasicHttp().At("http://0:8080/ExampleService")
                 .Create();
             serviceHost.Open();
 

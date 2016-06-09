@@ -1,21 +1,61 @@
 ﻿using System;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
+using Fluent.Wcf.Client.EndpointProvider;
+using Fluent.Wcf.Client.Interfaces;
 
 namespace Fluent.Wcf.Client
 {
-    public class ServiceClientFactory
+    /// <summary>
+    /// The ServiceClientFactory is used to create a ServicClient using a fluent interface.
+    /// </summary>
+    /// <typeparam name="TInterface">The Service Interface</typeparam>
+    public class ServiceClientFactory<TInterface> : INeedBinding<TInterface>, INeedCreation<TInterface>
+        where TInterface : class
     {
-        private Type _interfaceType;
-        private ServiceClientFactory(Type interfaceType)
+        /// <summary>
+        /// private ctor
+        /// </summary>
+        private ServiceClientFactory() {}
+        
+        /// <summary>
+        /// Start creating a new ServiceChannel implementing TInterface
+        /// </summary>
+        public static INeedBinding<TInterface> CreateClient()
         {
-            _interfaceType = interfaceType;
+            return new ServiceClientFactory<TInterface>();
         }
-        public static ServiceClientFactory CreateClient<T>()
+        
+        /// <summary>
+        /// The EndpointProvider choosen.
+        /// </summary>
+        internal IEndpointProvider<Binding> EndpointProvider;
+
+        /// <summary>
+        /// Creates a NetTcpBinding for the ServiceClient.
+        /// </summary>
+        public INeedBindingConfigurationOrAddress<Binding, TInterface> UsingNetTcp()
         {
-            return new ServiceClientFactory(typeof(T));
+            return new NetTcpEndpointProvider<TInterface>(this);
         }
 
+        /// <summary>
+        /// Creates a BasicHttpBinding for the ServiceClient.
+        /// </summary>
+        public INeedBindingConfigurationOrAddress<Binding, TInterface> UsingBasicHttp()
+        {
+            return new BasicHttpEndpointProvider<TInterface>(this);
+        }
 
-
-
+        /// <summary>
+        /// Returns the ServiceClient.
+        /// </summary>
+        public ServiceClient<TInterface> Create()
+        {
+            return new ServiceClient<TInterface>(ChannelFactory<TInterface>.CreateChannel(
+                EndpointProvider.CreateBinding(),
+                EndpointProvider.CreateEndpoint()
+                ));
+        }
     }
 }

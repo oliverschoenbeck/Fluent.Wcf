@@ -40,6 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\EndpointProvider\BaseEndpointProvider.cs" />
+    <Compile Include="Client\EndpointProvider\BasicHttpEndpointProvider.cs" />
+    <Compile Include="Client\EndpointProvider\NetTcpEndpointProvider.cs" />
+    <Compile Include="Client\Interfaces\IEndpointProvider.cs" />
+    <Compile Include="Client\Interfaces\INeedAddress.cs" />
+    <Compile Include="Client\Interfaces\INeedBinding.cs" />
+    <Compile Include="Client\Interfaces\INeedBindingConfigurationOrAddress.cs" />
+    <Compile Include="Client\Interfaces\INeedCreation.cs" />
+    <Compile Include="Client\ServiceClient.cs" />
     <Compile Include="Client\ServiceClientFactory.cs" />
     <Compile Include="Service\EndpointProvider\BaseEndpointProvider.cs" />
     <Compile Include="Service\EndpointProvider\BasicHttpEndpointProvider.cs" />
@@ -55,10 +64,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\ServiceFactory.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Client\EndpointProvider\" />
-    <Folder Include="Client\Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -13,19 +13,30 @@ namespace Fluent.Wcf.ExampleClient
     {
         static void Main(string[] args)
         {
-            var binding = new BasicHttpBinding();
-            var endpoint = new EndpointAddress("http://localhost:8080/ExampleService");
-            var service = ChannelFactory<IExampleService>.CreateChannel(binding, endpoint);
-
-            Console.WriteLine(service.Add(1,1));
-            Console.ReadLine();
-
-            ServiceClientFactory
-                .CreateClient<IExampleService>()
+            var client = ServiceClientFactory<IExampleService>
+                .CreateClient()
                 .UsingNetTcp()
-                .WithConfiguration((b) => {})
-                .At("http://localhost:8080/ExampleService")
+                .At("net.tcp://127.0.0.1:8090/ExampleService")
                 .Create();
+
+            client.Channel.Opened += (_, __) =>
+            {
+                Console.WriteLine("Opened!");
+                Console.Write("1 + 1 = ");
+                Console.WriteLine(client.Service.Add(1, 1));
+
+                Console.Write("Closing .. ");
+                client.Channel.Close();
+            };
+            client.Channel.Closed += (_, __) =>
+            {
+                Console.WriteLine("Closed!");
+            };
+
+            Console.Write("Opening .. ");
+            client.Channel.Open();
+
+            Console.ReadLine();
         }
     }
 }
