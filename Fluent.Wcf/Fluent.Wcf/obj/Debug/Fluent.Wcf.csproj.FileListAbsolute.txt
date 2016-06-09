@@ -2,3 +2,4 @@ C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf\bin\Debug\Fluent.W
 C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf\bin\Debug\Fluent.Wcf.pdb
 C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf\obj\Debug\Fluent.Wcf.dll
 C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf\obj\Debug\Fluent.Wcf.pdb
+C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf\obj\Debug\Fluent.Wcf.csprojResolveAssemblyReference.cache
