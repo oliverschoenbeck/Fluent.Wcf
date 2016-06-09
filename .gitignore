@@ -187,3 +187,6 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+*.dll
+Fluent.Wcf/Fluent.Wcf.ExampleClient/bin/Debug/Fluent.Wcf.dll
+*.exe

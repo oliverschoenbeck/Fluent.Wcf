@@ -1,4 +1,0 @@
-C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleContext\bin\Debug\Fluent.Wcf.ExampleContext.dll
-C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleContext\bin\Debug\Fluent.Wcf.ExampleContext.pdb
-C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleContext\obj\Debug\Fluent.Wcf.ExampleContext.dll
-C:\Users\OS\Documents\GitHub\Fluent.Wcf\Fluent.Wcf\Fluent.Wcf.ExampleContext\obj\Debug\Fluent.Wcf.ExampleContext.pdb
