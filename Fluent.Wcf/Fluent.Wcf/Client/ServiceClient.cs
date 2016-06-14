@@ -2,12 +2,15 @@
 
 namespace Fluent.Wcf.Client
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class ServiceClient<TInterface>
     {
         private readonly TInterface _channel;
 
         /// <summary>
-        /// Creates a new ServiceClient
+        /// Creates a new ServiceClient.
         /// </summary>
         /// <param name="channel"></param>
         public ServiceClient(TInterface channel)

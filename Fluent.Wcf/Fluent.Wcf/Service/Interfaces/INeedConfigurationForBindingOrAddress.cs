@@ -3,8 +3,11 @@ using System.ServiceModel.Channels;
 
 namespace Fluent.Wcf.Service.Interfaces
 {
-    public interface INeedConfigurationForBindingOrAddress : INeedAddress
+    public interface INeedConfigurationForBindingOrAddress<TService, TInterface, TBinding> : INeedAddress<TService, TInterface, TBinding>
+        where TService : TInterface
+        where TInterface : class
+        where TBinding : Binding
     {
-        INeedConfigurationForEndpointOrAddress WithBindingConfiguration(Action<Binding> configurationAction);
+        INeedConfigurationForEndpointOrAddress<TService, TInterface, TBinding> WithBindingConfiguration(Action<TBinding> configurationAction);
     }
 }

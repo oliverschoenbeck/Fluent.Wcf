@@ -1,9 +1,15 @@
-﻿namespace Fluent.Wcf.Service.Interfaces
-{
-    public interface INeedEndpoint
-    {
-        INeedConfigurationOrAddress UsingNetTcp();
+﻿using System.ServiceModel;
 
-        INeedConfigurationOrAddress UsingBasicHttp();
+namespace Fluent.Wcf.Service.Interfaces
+{
+    public interface INeedEndpoint<TService, TInterface>
+        where TService : TInterface
+        where TInterface : class
+    {
+        INeedConfigurationOrAddress<TService, TInterface, NetTcpBinding> UsingNetTcp();
+
+        INeedConfigurationOrAddress<TService, TInterface, BasicHttpBinding> BasicHttpTcp();
+
+        // INeedConfigurationOrAddress UsingBasicHttp();
     }
 }

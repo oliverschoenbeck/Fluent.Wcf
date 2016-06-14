@@ -1,10 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Net;
-using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ServiceModel;
 
 namespace Fluent.Wcf.Client.EndpointProvider
 {
@@ -20,8 +14,10 @@ namespace Fluent.Wcf.Client.EndpointProvider
         public override NetTcpBinding CreateBinding()
         {
             var binding = new NetTcpBinding();
+            
             if (ConfigurationAction != null)
                 ConfigurationAction.Invoke(binding);
+
             return binding;
         }
 

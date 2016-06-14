@@ -1,5 +1,4 @@
-﻿using System;
-using System.ServiceModel;
+﻿using System.ServiceModel;
 using System.ServiceModel.Channels;
 using Fluent.Wcf.Client.EndpointProvider;
 using Fluent.Wcf.Client.Interfaces;

@@ -1,5 +1,4 @@
-﻿using System.Net;
-using System.ServiceModel.Channels;
+﻿using System.ServiceModel.Channels;
 
 namespace Fluent.Wcf.Client.Interfaces
 {

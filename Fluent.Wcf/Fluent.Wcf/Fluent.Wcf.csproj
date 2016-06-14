@@ -33,11 +33,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client\EndpointProvider\BaseEndpointProvider.cs" />
@@ -53,6 +48,7 @@
     <Compile Include="Service\EndpointProvider\BaseEndpointProvider.cs" />
     <Compile Include="Service\EndpointProvider\BasicHttpEndpointProvider.cs" />
     <Compile Include="Service\EndpointProvider\NetTcpEndpointProvider.cs" />
+    <Compile Include="Service\Behaviors\CustomInstanceProviderBehavior.cs" />
     <Compile Include="Service\Interfaces\IEndpointProvider.cs" />
     <Compile Include="Service\Interfaces\INeedAddress.cs" />
     <Compile Include="Service\Interfaces\INeedConfigurationForBindingOrAddress.cs" />
@@ -60,7 +56,6 @@
     <Compile Include="Service\Interfaces\INeedConfigurationOrAddress.cs" />
     <Compile Include="Service\Interfaces\INeedCreationOrEndpoint.cs" />
     <Compile Include="Service\Interfaces\INeedEndpoint.cs" />
-    <Compile Include="Service\Interfaces\INeedInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\ServiceFactory.cs" />
   </ItemGroup>
