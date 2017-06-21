@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Fluent.WCF</id>
+    <version>$version$</version>
+    <title>Fluent.WCF</title>
+    <authors>Oliver Schönbeck</authors>
+    <owners>Oliver Schönbeck</owners>
+    <licenseUrl></licenseUrl>
+    <projectUrl></projectUrl>
+    <iconUrl></iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Simple API to create WCF ServiceHost and Clients in a fluent way.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright &#x00A9; Oliver Schönbeck</copyright>
+    <tags>api fluent wcf</tags>
+  </metadata>
+  <files>
+	  <file src="Fluent.Wcf\bin\$configuration$\Fluent.Wcf.dll" target="lib\net40\" />
+  </files>
+</package>
