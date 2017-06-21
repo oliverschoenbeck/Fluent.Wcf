@@ -1,12 +1,15 @@
-﻿using System.ServiceModel.Channels;
+﻿using System.ServiceModel;
+using System.ServiceModel.Channels;
 
 namespace Fluent.Wcf.Client.Interfaces
 {
     public interface INeedBinding<TInterface>
         where TInterface : class
     {
-        INeedBindingConfigurationOrAddress<Binding, TInterface> UsingNetTcp();
+        INeedBindingConfigurationOrAddress<NetTcpBinding, TInterface> UsingNetTcp();
 
-        INeedBindingConfigurationOrAddress<Binding, TInterface> UsingBasicHttp();
+        INeedBindingConfigurationOrAddress<BasicHttpBinding, TInterface> UsingBasicHttp();
+
+        INeedBindingConfigurationOrAddress<WebHttpBinding, TInterface> UsingWebHttp();
     }
 }

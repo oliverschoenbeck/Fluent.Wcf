@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
+using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
 using Fluent.Wcf.ExampleContext;
 using Fluent.Wcf.Service;
@@ -10,19 +11,13 @@ namespace Fluent.Wcf.ExampleHost
     public class Program
     {
         static void Main(string[] args)
-        {
-            //var serviceHost = ServiceFactory
-            //    .CreateService(typeof (ExampleService), true)
-            //    .UsingInterface(typeof (IExampleService))
-            //    .UsingNetTcp().At("net.tcp://0:8090/ExampleService")
-            //    .Create();
-            //serviceHost.Open();
-
+        {            
             var sh =
                 ServiceFactory<ExampleService, IExampleService>
                     .CreateService(new ExampleService())
-                    .UsingNetTcp().At("net.tcp://0:8090/ExampleService")
-                    .BasicHttpTcp().At("http://0:8080/ExampleService")
+                    .UsingNetTcp()
+                        .At("net.tcp://0:8090/ExampleService")
+                    
                     .Create();
             sh.Open();
 
@@ -62,12 +57,7 @@ namespace Fluent.Wcf.ExampleHost
         public class WrongExampleService : IExampleService
         {
             private readonly int _multiplicator;
-
-            //public WrongExampleService()
-            //{
-                
-            //}
-
+            
             public WrongExampleService(int multiplicator)
             {
                 _multiplicator = multiplicator;

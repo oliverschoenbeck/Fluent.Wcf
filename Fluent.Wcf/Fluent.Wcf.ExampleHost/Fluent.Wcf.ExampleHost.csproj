@@ -35,6 +35,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,10 +50,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Fluent.Wcf.ExampleContext\Fluent.Wcf.ExampleContext.csproj">
-      <Project>{7ADC7D71-456E-45AF-94DF-9863D94830C8}</Project>
-      <Name>Fluent.Wcf.ExampleContext</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Fluent.Wcf\Fluent.Wcf.csproj">
       <Project>{51CADFF9-1D27-4215-BC4F-937B976776E4}</Project>
       <Name>Fluent.Wcf</Name>

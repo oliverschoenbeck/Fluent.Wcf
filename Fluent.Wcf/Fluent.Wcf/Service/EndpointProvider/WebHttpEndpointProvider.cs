@@ -1,17 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.ServiceModel;
+using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Fluent.Wcf.Service.EndpointProvider
 {
-    /// <summary>
-    /// Provides an ServiceEndpoint bound using BasiHttpBinding.
-    /// </summary>
-    public class BasicHttpEndpointProvider<TService, TInterface> : BaseEndpointProvider<TService, TInterface, BasicHttpBinding>
+    public class WebHttpEndpointProvider<TService, TInterface> : BaseEndpointProvider<TService, TInterface, WebHttpBinding>
         where TService : class, TInterface
         where TInterface : class
     {
-        internal BasicHttpEndpointProvider(ServiceFactory<TService, TInterface> parent) : base(parent) { }
+        public WebHttpEndpointProvider(ServiceFactory<TService, TInterface> parent) : base(parent)
+        {
+        }
 
         public override Uri GetUri()
         {
@@ -20,7 +24,7 @@ namespace Fluent.Wcf.Service.EndpointProvider
 
         public override ServiceEndpoint CreateEndpoint(ServiceHost serviceHost)
         {
-            var binding = new BasicHttpBinding();
+            var binding = new WebHttpBinding();
             BindingConfigurationAction?.Invoke(binding);
 
             var endpoint = serviceHost.AddServiceEndpoint(typeof(TInterface), binding, "");
@@ -28,5 +32,5 @@ namespace Fluent.Wcf.Service.EndpointProvider
 
             return endpoint;
         }
-    }
+    }    
 }

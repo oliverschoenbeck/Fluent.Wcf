@@ -8,8 +8,8 @@ namespace Fluent.Wcf.Service.Interfaces
     {
         INeedConfigurationOrAddress<TService, TInterface, NetTcpBinding> UsingNetTcp();
 
-        INeedConfigurationOrAddress<TService, TInterface, BasicHttpBinding> BasicHttpTcp();
+        INeedConfigurationOrAddress<TService, TInterface, BasicHttpBinding> UsingBasicHttp();
 
-        // INeedConfigurationOrAddress UsingBasicHttp();
+        INeedConfigurationOrAddress<TService, TInterface, WebHttpBinding> UsingWebHttp();
     }
 }

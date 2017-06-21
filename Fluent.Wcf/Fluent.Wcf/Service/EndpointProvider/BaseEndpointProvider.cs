@@ -50,6 +50,6 @@ namespace Fluent.Wcf.Service.EndpointProvider
 
         public abstract Uri GetUri();
 
-        public abstract ServiceEndpoint CreateEndpoint(ServiceHost host);
+        public abstract ServiceEndpoint CreateEndpoint(ServiceHost serviceHost);
     }
 }

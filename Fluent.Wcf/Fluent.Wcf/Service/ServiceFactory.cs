@@ -58,9 +58,12 @@ namespace Fluent.Wcf.Service
         /// Start creating a new ServiceHost using the singleton service instance given.
         /// Keep in mind that your service needs to be in InstanceContextMode.Single
         /// </summary>
-        public static INeedEndpoint<TService, TInterface> CreateService(TService serviceInstance)
+        public static INeedEndpoint<TService, TInterface> CreateService(TService singletonInstance)
         {
-            return new ServiceFactory<TService, TInterface>();
+            return new ServiceFactory<TService, TInterface>()
+            {
+                SingletonInstance = singletonInstance
+            };
         }
 
         /// <summary>
@@ -76,15 +79,6 @@ namespace Fluent.Wcf.Service
         }
 
         /// <summary>
-        /// Set a singleton instace of TService to use.
-        /// </summary>
-        public INeedEndpoint<TService, TInterface> AsSingelton(TService singletonInstance)
-        {
-            SingletonInstance = singletonInstance;
-            return this;
-        }
-
-        /// <summary>
         /// Add a NetTcp endpoint to your service.
         /// </summary>
         public INeedConfigurationOrAddress<TService, TInterface, NetTcpBinding> UsingNetTcp()
@@ -95,9 +89,17 @@ namespace Fluent.Wcf.Service
         /// <summary>
         /// Add a BasicHttp endpoint to your service.
         /// </summary>
-        public INeedConfigurationOrAddress<TService, TInterface, BasicHttpBinding> BasicHttpTcp()
+        public INeedConfigurationOrAddress<TService, TInterface, BasicHttpBinding> UsingBasicHttp()
         {
             return new BasicHttpEndpointProvider<TService, TInterface>(this);
+        }
+
+        /// <summary>
+        /// Add a BasicHttp endpoint to your service.
+        /// </summary>
+        public INeedConfigurationOrAddress<TService, TInterface, WebHttpBinding> UsingWebHttp()
+        {
+            return new WebHttpEndpointProvider<TService, TInterface>(this);
         }
 
         /// <summary>
@@ -124,7 +126,7 @@ namespace Fluent.Wcf.Service
 
             EndpointProvider.ForEach(epp =>
             {
-                var ep = epp.CreateEndpoint(serviceHost);
+                epp.CreateEndpoint(serviceHost);
             });
 
             // Add custom service instance provider if given and valid.
@@ -132,20 +134,18 @@ namespace Fluent.Wcf.Service
                 serviceHost.Description.Behaviors.Add(new CustomInstanceProviderBehavior(ServiceInstanceProvider));
 
             // Enable metadata exchange.
-            if (MetadataEnabled)
-            {
-                var meBehavior = serviceHost.Description.Behaviors.Find<ServiceMetadataBehavior>() ?? new ServiceMetadataBehavior();
-                meBehavior.HttpGetEnabled = EndpointProvider.OfType<BasicHttpEndpointProvider<TService, TInterface>>().Any();
-                serviceHost.Description.Behaviors.Add(meBehavior);
+            if (!MetadataEnabled) return serviceHost;
 
-                if (EndpointProvider.OfType<BasicHttpEndpointProvider<TService, TInterface>>().Any())
-                    serviceHost.AddServiceEndpoint(
-                        ServiceMetadataBehavior.MexContractName,
-                        MetadataExchangeBindings.CreateMexHttpBinding(),
-                        "mex"
-                    );
-            }
+            var meBehavior = serviceHost.Description.Behaviors.Find<ServiceMetadataBehavior>() ?? new ServiceMetadataBehavior();
+            meBehavior.HttpGetEnabled = EndpointProvider.OfType<BasicHttpEndpointProvider<TService, TInterface>>().Any();
+            serviceHost.Description.Behaviors.Add(meBehavior);
 
+            if (EndpointProvider.OfType<BasicHttpEndpointProvider<TService, TInterface>>().Any())
+                serviceHost.AddServiceEndpoint(
+                    ServiceMetadataBehavior.MexContractName,
+                    MetadataExchangeBindings.CreateMexHttpBinding(),
+                    "mex"
+                );
             return serviceHost;
         }
     }

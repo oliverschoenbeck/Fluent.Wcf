@@ -33,7 +33,7 @@ namespace Fluent.Wcf.Client
         /// <summary>
         /// Creates a NetTcpBinding for the ServiceClient.
         /// </summary>
-        public INeedBindingConfigurationOrAddress<Binding, TInterface> UsingNetTcp()
+        public INeedBindingConfigurationOrAddress<NetTcpBinding, TInterface> UsingNetTcp()
         {
             return new NetTcpEndpointProvider<TInterface>(this);
         }
@@ -41,11 +41,16 @@ namespace Fluent.Wcf.Client
         /// <summary>
         /// Creates a BasicHttpBinding for the ServiceClient.
         /// </summary>
-        public INeedBindingConfigurationOrAddress<Binding, TInterface> UsingBasicHttp()
+        public INeedBindingConfigurationOrAddress<BasicHttpBinding, TInterface> UsingBasicHttp()
         {
             return new BasicHttpEndpointProvider<TInterface>(this);
         }
 
+        public INeedBindingConfigurationOrAddress<WebHttpBinding, TInterface> UsingWebHttp()
+        {
+            return new WebHttpEndpointProvider<TInterface>(this);
+        }
+        
         /// <summary>
         /// Returns the ServiceClient.
         /// </summary>

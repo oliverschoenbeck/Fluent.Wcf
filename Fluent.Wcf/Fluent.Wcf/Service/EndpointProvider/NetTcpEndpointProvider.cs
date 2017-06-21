@@ -21,12 +21,11 @@ namespace Fluent.Wcf.Service.EndpointProvider
         public override ServiceEndpoint CreateEndpoint(ServiceHost serviceHost)
         {
             var binding = new NetTcpBinding();
-            if (BindingConfigurationAction != null)
-                BindingConfigurationAction.Invoke(binding);
+            BindingConfigurationAction?.Invoke(binding);
 
             var endpoint = serviceHost.AddServiceEndpoint(typeof(TInterface), binding, "");
-            if (EndpointConfigurationAction != null)
-                EndpointConfigurationAction.Invoke(endpoint);
+            EndpointConfigurationAction?.Invoke(endpoint);
+
             return endpoint;
         }
     }

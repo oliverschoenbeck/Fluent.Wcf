@@ -33,11 +33,13 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client\EndpointProvider\BaseEndpointProvider.cs" />
     <Compile Include="Client\EndpointProvider\BasicHttpEndpointProvider.cs" />
     <Compile Include="Client\EndpointProvider\NetTcpEndpointProvider.cs" />
+    <Compile Include="Client\EndpointProvider\WebHttpEndpointProvider.cs" />
     <Compile Include="Client\Interfaces\IEndpointProvider.cs" />
     <Compile Include="Client\Interfaces\INeedAddress.cs" />
     <Compile Include="Client\Interfaces\INeedBinding.cs" />
@@ -49,6 +51,7 @@
     <Compile Include="Service\EndpointProvider\BasicHttpEndpointProvider.cs" />
     <Compile Include="Service\EndpointProvider\NetTcpEndpointProvider.cs" />
     <Compile Include="Service\Behaviors\CustomInstanceProviderBehavior.cs" />
+    <Compile Include="Service\EndpointProvider\WebHttpEndpointProvider.cs" />
     <Compile Include="Service\Interfaces\IEndpointProvider.cs" />
     <Compile Include="Service\Interfaces\INeedAddress.cs" />
     <Compile Include="Service\Interfaces\INeedConfigurationForBindingOrAddress.cs" />

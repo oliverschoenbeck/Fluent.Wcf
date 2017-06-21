@@ -10,8 +10,7 @@ namespace Fluent.Wcf.ExampleClient
         {
             var client = ServiceClientFactory<IExampleService>
                 .CreateClient()
-                .UsingNetTcp()
-                .At("net.tcp://127.0.0.1:8090/ExampleService")
+                .UsingNetTcp().At("net.tcp://127.0.0.1:8090/ExampleService")                
                 .Create();
 
             client.Channel.Opened += (_, __) =>
